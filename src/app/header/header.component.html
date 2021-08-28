@@ -10,34 +10,33 @@
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="#">Tournaments</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
+            Games
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">BGMI</a></li>
+            <li><a class="dropdown-item" href="#">COD</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" href="#">Assassins Creed</a></li>
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          <a class="nav-link" href="#" tabindex="-1" aria-disabled="false">Featured</a>
         </li>
-      </ul>
-      <!-- <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form> -->
-       <!-- Button trigger modal -->
+      </ul>      
+<div class="me-2">
 <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#SignUpModal">
   Sign-Up
 </button>
+</div>
+<div>
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#LoginModal">
   Log-In
 </button>
+</div>
 
     </div>
   </div>
@@ -50,23 +49,25 @@
         <h5 class="modal-title" id="exampleModalLabel">Please Register </h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body"><form>
+      <div class="modal-body">
+        <flash-messages></flash-messages>
+        <form (submit)="onRegisterSubmit()">
           <!-- <img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
           <!-- <h1 class="h3 mb-3 fw-normal">Please sign in</h1> -->      
           <div class="form-floating">
-            <input type="text" class="form-control" id="fullName" placeholder="Name" name="fullName">
+            <input type="text" class="form-control" [(ngModel)]="name" id="fullName" placeholder="Name" name="name">
             <label for="floatingInput">Full Name</label>
           </div>
           <div class="form-floating">
-            <input type="email" class="form-control" id="email" placeholder="Email" name="email">
+            <input type="email" class="form-control" id="email" [(ngModel)]="email" placeholder="Email" name="email">
             <label for="floatingPassword">Email</label>
           </div>      
           <div class="form-floating">
-            <input type="text" class="form-control" id="mobile" placeholder="Mobile No" name="mobile">
+            <input type="text" class="form-control" id="mobile" placeholder="Mobile No" [(ngModel)]="mobile" name="mobile">
             <label for="floatingPassword">Mobile No</label>
           </div>        
           <div class="form-floating">
-              <input type="password" class="form-control" id="password" placeholder="Password" name="password">
+              <input type="password" class="form-control" id="password" placeholder="Password" [(ngModel)]="password" name="password">
               <label for="floatingInput">Password</label>
           </div>     
           <div class="checkbox mb-3">            
@@ -83,10 +84,12 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Please Register </h5>
+        <h5 class="modal-title" id="exampleModalLabel">Log-In Here  </h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body"><form>
+      <div class="modal-body">
+        <!-- <ng-flash-message></ng-flash-message> -->        
+        <form>
           <!-- <img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
           <!-- <h1 class="h3 mb-3 fw-normal">Please sign in</h1> -->      
           <!-- <div class="form-floating">
@@ -94,7 +97,7 @@
             <label for="floatingInput">Full Name</label>
           </div> -->
           <div class="form-floating">
-            <input type="email" class="form-control" id="email" placeholder="Email" name="email">
+            <input type="email" class="form-control" id="emaillogin" placeholder="Email" name="emaillogin">
             <label for="floatingPassword">Email</label>
           </div>      
           <!-- <div class="form-floating">
@@ -102,7 +105,7 @@
             <label for="floatingPassword">Mobile No</label>
           </div>         -->
           <div class="form-floating">
-              <input type="password" class="form-control" id="password" placeholder="Password" name="password">
+              <input type="password" class="form-control" id="passwd" placeholder="Password" name="passwd">
               <label for="floatingInput">Password</label>
           </div>     
           <div class="checkbox mb-3">            
